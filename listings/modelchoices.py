@@ -34,7 +34,7 @@ state_choices = {
   ('RJ', 'Rajasthan'),
   ('MI', 'Sikkim'),
   ('TN', 'Tamil Nadu'),
-  ('TS', 'Telegana'),
+  ('TS', 'Telangana'),
   ('TR', 'Tripura'),
   ('UP', 'Uttar Pradesh'),
   ('UK', 'Uttarakhand'),
