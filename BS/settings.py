@@ -26,7 +26,7 @@ SECRET_KEY = '_!3=&0ga*0isp#@5f)qj5nd#8xg74of5h&!$6pm+z55!0n)ox$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'listings',
     'accounts',
     'inquiry',
-    'crispy_forms'
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -155,8 +156,9 @@ MESSAGE_TAGS = {
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'gvineethreddy17@gmail.com'
-EMAIL_HOST_PASSWORD = 'pspcqvroxtycnlif'
+EMAIL_HOST_USER = 'zhadrizwan99@gmail.com'
+EMAIL_HOST_PASSWORD = 'cbtzbvxjmxibodlm '
 EMAIL_USE_TLS = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

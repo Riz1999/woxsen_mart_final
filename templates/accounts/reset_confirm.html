@@ -21,7 +21,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" value="Chage Password" class="btn btn-primary">
+        <input type="submit" value="Change Password" class="btn btn-primary">
     </form>
     {%else%}
     <p> The link is invalid , maybe because the link was already used. Please request a new one!</p>
