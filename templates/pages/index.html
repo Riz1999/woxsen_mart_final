@@ -2,6 +2,12 @@
 {% load humanize %}
 {% block title %} Home{% endblock %}
 {% block content %}
+<!-- <style>
+  #showcase {
+  background: url(../static/img/8L0A3764.jpg)
+  } 
+</style> -->
+
 <section id="showcase">
     <div class="container text-center">
       <div class="home-search p-5">
@@ -10,7 +16,7 @@
           <h1 class="display-4 mb-4">
             Woxsen Campus Mart
           </h1>
-          <p class="lead">This application is for Woxsen University Students you can get the designed products, Gadgets, accesories, where you can buy, sell, rent your Products.</p>
+          <p class="lead">This application is for Woxsen University Students you can get the designed products, Gadgets, accesories, where you can buy and sell your Products.</p>
           <div class="search">
             <form action="{% url 'search' %}">
               <!-- Form Row 1 -->
@@ -76,71 +82,91 @@
       </div>
     </div>
   </section>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica&display=swap">
+    <!-- ... (other head elements) ... -->
+    <style>
+        .custom-listing-card {
+    height: 100%; /* Set your preferred height here */
+}
+
+.listing-preview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    </style>
+</head>
 
   <!-- Listings -->
-  <section id="listings" class="py-5">
-    <div class="container">
+<!-- Listings -->
+<section id="listings" class="py-5" style="font-family: 'Helvetica', Sans-serif;">
+  <div class="container">
       <h3 class="text-center mb-3">Latest Listings</h3>
       <div class="row">
-        {% if listings %}
-        {% for listing in listings %}
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card listing-preview">
-            <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
-            <div class="card-img-overlay">
-              <h2>
-                <span class="badge badge-secondary text-white">₹ {{ listing.price | intcomma }}</span>
-              </h2>
-            </div>
-            <div class="card-body">
-              <div class="listing-heading text-center">
-                <h4 class="text-primary">{{listing.title}}</h4>
-                <p>
-                  <i class="fas fa-map-marker text-secondary"></i> {{listing.city}} {{listing.state}}, {{listing.zipcode}}</p>
+          {% if listings %}
+              {% for listing in listings %}
+                  <div class="col-md-6 col-lg-4 mb-4">
+                      <div class="card listing-preview custom-listing-card">
+                          <!-- Set a fixed height for the image container -->
+                          <div class="img-container" style="height: 200px; overflow: hidden;">
+                              <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
+                          </div>
+                          <div class="card-img-overlay">
+                              <h2>
+                                  <span class="badge badge-secondary text-white">₹ {{ listing.price | intcomma }}</span>
+                              </h2>
+                          </div>
+                          <div class="card-body d-flex flex-column">
+                              <div class="listing-heading text-center">
+                                  <h4 class="text-primary">{{listing.title}}</h4>
+                                  <p>
+                                      <i class="fas fa-map-marker text-secondary"></i> {{listing.city}} {{listing.state}}, {{listing.zipcode}}
+                                  </p>
+                              </div>
+                              <hr>
+                              <div class="row py-2 text-secondary">
+                                  <div class="col-8">
+                                      <i class="fas fa-th-large"></i> Category:{{listing.category}}
+                                  </div>
+                              </div>
+                              <div class="row py-2 text-secondary">
+                                  <div class="col-8">
+                                      <i class="fas fa-user"></i> Owner:{{listing.owner.first_name}}
+                                  </div>
+                              </div>
+                              <div class="row py-2 text-secondary">
+                                  <div class="col-8">
+                                      <i class="fas fa-phone"></i> Phone:{{listing.owner.phone}}
+                                  </div>
+                              </div>
+                              <div class="row py-2 text-secondary">
+                                  <div class="col-10">
+                                      <i class="fas fa-envelope"></i> Email:{{listing.owner.email}}
+                                  </div>
+                              </div>
+                              <hr>
+                              <div class="row text-secondary pb-2">
+                                  <div class="col-6">
+                                      <i class="fas fa-clock"></i>   {{listing.list_date | timesince }}
+                                  </div>
+                              </div>
+                              <hr>
+                              <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block mt-auto">More Info</a>
+                          </div>
+                      </div>
+                  </div>
+              {% endfor %}
+          {% else %}
+              <div class="col-md-12">
+                  <p>Currently, there are no listings available</p>
               </div>
-              <hr>
-              <div class="row py-2 text-secondary">
-                <div class="col-8">
-                  <i class="fas fa-th-large"></i> Category:{{listing.category}}
-                </div>
-              </div>
-              <div class="row py-2 text-secondary">
-                <div class="col-8">
-                  <i class="fas fa-user"></i> Owner:{{listing.owner.first_name}}
-                </div>
-                </div>
-                <div class="row py-2 text-secondary">
-                <div class="col-8">
-                  <i class="fas fa-phone"></i> Phone:{{listing.owner.phone}}
-                </div>
-                </div>
-                <div class="row py-2 text-secondary">
-              <div class="col-10">
-                <i class="fas fa-envelope"></i> Email:{{listing.owner.email}}
-                </div>
-            </div>
-            </div>
-              <hr>
-              <div class="row text-secondary pb-2">
-                <div class="col-6">
-                  <i class="fas fa-clock"></i>   {{listing.list_date | timesince }}</div>
-              </div>
-              <hr>
-              <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
-          </div>
-        </div>
-        {% endfor %}
-        {% else %}
-        <div class="col-md-12">
-            <p>Currently there are no listings Available</p>
-        </div>
-        {%endif%}
+          {% endif %}
       </div>
+  </div>
+</section>
 
-        
-      </div>
-    </div>
-  </section>
 
   <section id="services" class="py-5 bg-secondary text-white">
     <div class="container">
