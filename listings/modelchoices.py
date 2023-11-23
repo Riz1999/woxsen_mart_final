@@ -1,9 +1,9 @@
 category_choices = {
   ('Electronics', 'Electronics'),
-  ('Property', 'Property'),
+  #('Property', 'Property'),
   ('Cars', 'Cars'),
   ('Furniture', 'Furniture'),
-  ('Jobs', 'Jobs'),
+  #('Jobs', 'Jobs'),
   ('Mobiles', 'Mobiles'),
   ('Bikes', 'Bikes'),
   ('Books&Sports', 'Books&Sports'),

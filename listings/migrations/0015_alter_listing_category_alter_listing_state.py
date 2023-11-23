@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='listing',
             name='category',
-            field=models.CharField(choices=[('Cars', 'Cars'), ('Furniture', 'Furniture'), ('Mobiles', 'Mobiles'), ('Bikes', 'Bikes'), ('Jobs', 'Jobs'), ('Electronics', 'Electronics'), ('Property', 'Property'), ('Books&Sports', 'Books&Sports'), ('Fashion', 'Fashion')], max_length=100),
+            field=models.CharField(choices=[('Cars', 'Cars'), ('Furniture', 'Furniture'), ('Mobiles', 'Mobiles'), ('Bikes', 'Bikes'), ('Electronics', 'Electronics'), ('Property', 'Property'), ('Books&Sports', 'Books&Sports'), ('Fashion', 'Fashion')], max_length=100),
         ),
         migrations.AlterField(
             model_name='listing',

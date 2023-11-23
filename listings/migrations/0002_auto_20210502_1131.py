@@ -13,11 +13,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='listing',
             name='category',
-            field=models.CharField(choices=[('Jobs', 'Jobs'), ('Electronics', 'Electronics'), ('Books&Sports', 'Books&Sports'), ('Bikes', 'Bikes'), ('Property', 'Property'), ('Mobiles', 'Mobiles'), ('Furniture', 'Furniture'), ('Fashion', 'Fashion'), ('Cars', 'Cars')], max_length=100),
+            field=models.CharField(choices=[ ('Electronics', 'Electronics'), ('Books&Sports', 'Books&Sports'), ('Bikes', 'Bikes'), ('Mobiles', 'Mobiles'), ('Furniture', 'Furniture'), ('Fashion', 'Fashion'), ('Cars', 'Cars')], max_length=100),
         ),
         migrations.AlterField(
             model_name='listing',
             name='state',
-            field=models.CharField(choices=[('HP', 'Haryana'), ('NL', 'Nagaland'), ('ML', 'Meghalaya'), ('TR', 'Tripura'), ('GJ', 'Gujarat'), ('UK', 'Uttarakhand'), ('KA', 'Karnataka'), ('RJ', 'Rajasthan'), ('MH', 'Maharashtra'), ('PB', 'Punjab'), ('WB', 'West Bengal'), ('MN', 'Manipur'), ('BR', 'Bihar'), ('AR', 'Arunachal Pradesh'), ('TS', 'Telegana'), ('AP', 'Andhra Pradesh'), ('MZ', 'Mizoram'), ('KL', 'Kerala'), ('TN', 'Tamil Nadu'), ('GA', 'Goa'), ('MP', 'Madhya Pradesh'), ('JH', 'Jharkhand'), ('MI', 'Sikkim'), ('OD', 'Odisha'), ('UP', 'Uttar Pradesh'), ('AS', 'Assam'), ('CG', 'Chhattisgarh')], max_length=100),
+            field=models.CharField(choices=[('HP', 'Haryana'), ('NL', 'Nagaland'), ('ML', 'Meghalaya'), ('TR', 'Tripura'), ('GJ', 'Gujarat'), ('UK', 'Uttarakhand'), ('KA', 'Karnataka'), ('RJ', 'Rajasthan'), ('MH', 'Maharashtra'), ('PB', 'Punjab'), ('WB', 'West Bengal'), ('MN', 'Manipur'), ('BR', 'Bihar'), ('AR', 'Arunachal Pradesh'), ('TS', 'Telangana'), ('AP', 'Andhra Pradesh'), ('MZ', 'Mizoram'), ('KL', 'Kerala'), ('TN', 'Tamil Nadu'), ('GA', 'Goa'), ('MP', 'Madhya Pradesh'), ('JH', 'Jharkhand'), ('MI', 'Sikkim'), ('OD', 'Odisha'), ('UP', 'Uttar Pradesh'), ('AS', 'Assam'), ('CG', 'Chhattisgarh')], max_length=100),
         ),
     ]
